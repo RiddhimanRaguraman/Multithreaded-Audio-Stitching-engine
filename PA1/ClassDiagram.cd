@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="FileThread">
+    <Position X="0.75" Y="5.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAIEAADQAAABAACEABBBABQGEAAAAAIggBgAAAAAAA=</HashCode>
+      <FileName>FileThread.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KillThread">
+    <Position X="5.25" Y="5.5" Width="1.5" />
+    <NestedTypes>
+      <Struct Name="KillThread::KeyPress" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>KillThread.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAEAAAgcAAAAAAQAGAAAAQAAAAkCAAAAAE=</HashCode>
+      <FileName>KillThread.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KillableBase">
+    <Position X="0.75" Y="1.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="KillableBase::ThreadCount" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>KillableBase.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Struct Name="KillableBase::KillShare" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>KillableBase.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAIAgAAAAAAAIAAAQAAAAAAAAAAEAAAAAgAAAAAAA=</HashCode>
+      <FileName>KillableBase.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CoordThread">
+    <Position X="2.75" Y="5.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="CoordThread::Status" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>CoordThread.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>BARBAAQDQAhABgEAEAAAAAAICEAgAAQAgCAgQAEEAIA=</HashCode>
+      <FileName>CoordThread.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ThreadFramework::BannerBase" Collapsed="true">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQABAACAgAAAAAAAAAACAAAAEAAAAAAAgAEgAAAA=</HashCode>
+      <FileName>R:\Perforce\Quater4\keenan2025fall_csc562\student\rraguram\PA1_B\Framework\Framework.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlaybackThread">
+    <Position X="8.5" Y="5.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="PlaybackThread::Status" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>PlaybackThread.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>BBAAAQCCwSAAAQAgEADAAIBEiEgAAAAAQABgAIAAAAI=</HashCode>
+      <FileName>PlaybackThread.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

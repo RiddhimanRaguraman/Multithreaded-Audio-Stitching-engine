@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{ED602E5D-031C-4AF8-B6A6-4B34E0073B27}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Basics1</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <CodeAnalysisRuleSet>CppCoreCheckConstRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <EnableMicrosoftCodeAnalysis>false</EnableMicrosoftCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <EnableMicrosoftCodeAnalysis>false</EnableMicrosoftCodeAnalysis>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;BEAUCERON;WINDOWS_TARGET_PLATFORM="$(TargetPlatformVersion)";SOLUTION_DIR=R"($(SolutionDir))";TOOLS_VERSION=R"($(VCToolsVersion))";LOCAL_WORKING_DIR=R"($(LocalDebuggerWorkingDirectory))";FILE_USE_DLL;TIME_USE_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)Framework;$(SolutionDir)Dist\File\include;$(SolutionDir)Dist\Time\include;$(SolutionDir)Test</AdditionalIncludeDirectories>
+      <WarningVersion>
+      </WarningVersion>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <PrecompiledHeaderOutputFile>
+      </PrecompiledHeaderOutputFile>
+      <ForcedIncludeFiles>Framework.h</ForcedIncludeFiles>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <EnablePREfast>false</EnablePREfast>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+    </Link>
+    <PreLinkEvent>
+      <Command>copy "$(SolutionDir)Dist\File\lib\*.dll" "$(SolutionDir)$(Platform)\$(Configuration)"
+copy "$(SolutionDir)Dist\Time\lib\*.dll" "$(SolutionDir)$(Platform)\$(Configuration)"</Command>
+    </PreLinkEvent>
+    <PreBuildEvent>
+      <Command>if exist "$(SolutionDir)Azul" rmdir /S /Q "$(SolutionDir)Azul"</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;BEAUCERON;WINDOWS_TARGET_PLATFORM="$(TargetPlatformVersion)";SOLUTION_DIR=R"($(SolutionDir))";TOOLS_VERSION=R"($(VCToolsVersion))";LOCAL_WORKING_DIR=R"($(LocalDebuggerWorkingDirectory))";FILE_USE_DLL;TIME_USE_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)Framework;$(SolutionDir)Dist\File\include;$(SolutionDir)Dist\Time\include;$(SolutionDir)Test</AdditionalIncludeDirectories>
+      <WarningVersion>
+      </WarningVersion>
+      <PrecompiledHeaderOutputFile>
+      </PrecompiledHeaderOutputFile>
+      <ForcedIncludeFiles>Framework.h</ForcedIncludeFiles>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+    <PreLinkEvent>
+      <Command>copy "$(SolutionDir)Dist\File\lib\*.dll" "$(SolutionDir)$(Platform)\$(Configuration)"
+copy "$(SolutionDir)Dist\Time\lib\*.dll" "$(SolutionDir)$(Platform)\$(Configuration)"</Command>
+    </PreLinkEvent>
+    <PreBuildEvent>
+      <Command>if exist "$(SolutionDir)Azul" rmdir /S /Q "$(SolutionDir)Azul"</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Test\CoordTest.cpp" />
+    <ClCompile Include="..\Test\UnitTestThread.cpp" />
+    <ClCompile Include="..\Test\WaveTest.cpp" />
+    <ClCompile Include="Buffer.cpp" />
+    <ClCompile Include="CircularData.cpp" />
+    <ClCompile Include="CoordEndingState.cpp" />
+    <ClCompile Include="CoordFinishedState.cpp" />
+    <ClCompile Include="CoordInitState.cpp" />
+    <ClCompile Include="CoordPlayState.cpp" />
+    <ClCompile Include="CoordThread.cpp" />
+    <ClCompile Include="FileCoordShare.cpp" />
+    <ClCompile Include="FileThread.cpp" />
+    <ClCompile Include="KillableBase.cpp" />
+    <ClCompile Include="KillThread.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="PlaybackThread.cpp" />
+    <ClCompile Include="PlayCoordShare.cpp" />
+    <ClCompile Include="StringThis.cpp" />
+    <ClCompile Include="WaveFillCmd.cpp" />
+    <ClCompile Include="WaveBuffer.cpp" />
+    <ClCompile Include="WaveFinishedCmd.cpp" />
+    <ClInclude Include="..\Dist\File\include\File.h" />
+    <ClInclude Include="..\Dist\Time\include\AnimTime.h" />
+    <ClInclude Include="..\Dist\Time\include\AnimTimer.h" />
+    <ClInclude Include="..\Framework\Framework.h" />
+    <ClInclude Include="..\Test\UnitTestThread.h" />
+    <ClInclude Include="..\Test\TestData.h" />
+    <ClInclude Include="..\Test\_UnitTestConfiguration.h" />
+    <ClInclude Include="Buffer.h" />
+    <ClInclude Include="CircularData.h" />
+    <ClInclude Include="Command.h" />
+    <ClInclude Include="CoordEndingState.h" />
+    <ClInclude Include="CoordFinishedState.h" />
+    <ClInclude Include="CoordInitState.h" />
+    <ClInclude Include="CoordPlayState.h" />
+    <ClInclude Include="CoordState.h" />
+    <ClInclude Include="CoordThread.h" />
+    <ClInclude Include="FileCoordShare.h" />
+    <ClInclude Include="FileThread.h" />
+    <ClInclude Include="KillableBase.h" />
+    <ClInclude Include="KillThread.h" />
+    <ClInclude Include="PlaybackThread.h" />
+    <ClInclude Include="PlayCoordShare.h" />
+    <ClInclude Include="StringThis.h" />
+    <ClInclude Include="Wave.h" />
+    <ClInclude Include="WaveFillCmd.h" />
+    <ClInclude Include="WaveBuffer.h" />
+    <ClInclude Include="WaveFinishedCmd.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Dist\File\lib\File_DLL_X64Debug.dll">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </None>
+    <None Include="..\Dist\File\lib\File_DLL_X64Debug.exp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </None>
+    <None Include="..\Dist\File\lib\File_DLL_X64Debug.pdb">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </None>
+    <None Include="..\Dist\File\lib\File_DLL_X64Release.dll">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </None>
+    <None Include="..\Dist\File\lib\File_DLL_X64Release.exp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </None>
+    <None Include="..\Dist\File\lib\File_DLL_X64Release.pdb">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </None>
+    <None Include="..\Dist\Time\lib\Time_DLL_X64Debug.dll">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </None>
+    <None Include="..\Dist\Time\lib\Time_DLL_X64Debug.exp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </None>
+    <None Include="..\Dist\Time\lib\Time_DLL_X64Debug.pdb">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </None>
+    <None Include="..\Dist\Time\lib\Time_DLL_X64Release.dll">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </None>
+    <None Include="..\Dist\Time\lib\Time_DLL_X64Release.exp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </None>
+    <None Include="..\Dist\Time\lib\Time_DLL_X64Release.pdb">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </None>
+    <None Include="..\Framework\__DO NOT MODIFY__" />
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="..\Data\wave_0.wav" />
+    <Media Include="..\Data\wave_1.wav" />
+    <Media Include="..\Data\wave_10.wav" />
+    <Media Include="..\Data\wave_11.wav" />
+    <Media Include="..\Data\wave_12.wav" />
+    <Media Include="..\Data\wave_13.wav" />
+    <Media Include="..\Data\wave_14.wav" />
+    <Media Include="..\Data\wave_15.wav" />
+    <Media Include="..\Data\wave_16.wav" />
+    <Media Include="..\Data\wave_17.wav" />
+    <Media Include="..\Data\wave_18.wav" />
+    <Media Include="..\Data\wave_19.wav" />
+    <Media Include="..\Data\wave_2.wav" />
+    <Media Include="..\Data\wave_20.wav" />
+    <Media Include="..\Data\wave_21.wav" />
+    <Media Include="..\Data\wave_22.wav" />
+    <Media Include="..\Data\wave_3.wav" />
+    <Media Include="..\Data\wave_4.wav" />
+    <Media Include="..\Data\wave_5.wav" />
+    <Media Include="..\Data\wave_6.wav" />
+    <Media Include="..\Data\wave_7.wav" />
+    <Media Include="..\Data\wave_8.wav" />
+    <Media Include="..\Data\wave_9.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\Dist\File\lib\File_DLL_X64Debug.lib">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Library>
+    <Library Include="..\Dist\File\lib\File_DLL_X64Release.lib">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </Library>
+    <Library Include="..\Dist\Time\lib\Time_DLL_X64Debug.lib">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Library>
+    <Library Include="..\Dist\Time\lib\Time_DLL_X64Release.lib">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </Library>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
